@@ -34,7 +34,7 @@ export const createCommand = defineCommand({
     if(!ctx.args.name) {
       projectName = (await p.text({
         message: 'Enter project name(folder)',
-        placeholder: 'test',
+        placeholder: 'my-project',
       })).toString()
     }
 
@@ -55,7 +55,7 @@ export const createCommand = defineCommand({
     const copyTemplateSpinner = p.spinner()
 
     try {
-      console.log(projectName)
+      // console.log(projectName)
       copyTemplateSpinner.start('Creating new Service Worker...')
       await downloadTemplate(`${DEFAULT_REGISTRY}#${template}`, {
         dir: __targetDir
