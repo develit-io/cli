@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v1.2.1
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.2.0...v1.2.1)
+
+### 🩹 Fixes
+
+- **bin:** File struct + package ([e43516c](https://github.com/develit-io/cli/commit/e43516c))
+- **bin:** Import ([8cac9bd](https://github.com/develit-io/cli/commit/8cac9bd))
+
+### 💅 Refactors
+
+- Update build and exports ([529b12c](https://github.com/develit-io/cli/commit/529b12c))
+
+### ❤️ Contributors
+
+- Klein Petr ([@kleinpetr](http://github.com/kleinpetr))
+- Daniel Klein <daniel@develit.io>
+
 ## v1.2.0
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.1.0...v1.2.0)
