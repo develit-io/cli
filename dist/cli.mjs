@@ -1,4 +1,4 @@
-import * as tty from 'node:tty';
+git import * as tty from 'node:tty';
 import * as p from '@clack/prompts';
 import { resolve } from 'pathe';
 import { downloadTemplate } from 'giget';
