@@ -9,7 +9,8 @@
     "develit": "./bin/develit.mjs"
   },
   "exports": {
-    ".":  "./dist/cli.mjs"
+    ".": "./dist/index.mjs",
+    "./cli": "./bin/develit.mjs"
   },
   "files": [
     "bin",

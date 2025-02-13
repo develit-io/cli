@@ -1,5 +1,3 @@
-import * as fs from 'fs/promises'
-import * as path from 'path'
 import * as p from '@clack/prompts'
 import { resolve } from 'pathe'
 import { downloadTemplate } from 'giget'
