@@ -8,6 +8,10 @@
   "bin": {
     "develit": "./dist/cli.js"
   },
+  "exports": {
+    ".": "./dist/cli.mjs",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "start": "node dist/cli.js",
     "build": "unbuild",
