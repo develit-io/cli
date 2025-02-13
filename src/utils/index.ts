@@ -2,6 +2,7 @@ import * as fs from 'fs/promises'
 import * as path from 'path'
 import { exec } from 'child_process'
 import { promisify } from 'util'
+import { transformNameToClassName} from "./name"
 
 async function replaceContent(filepath: string, replacer: (content: string) => string) {
   const content = await fs.readFile(filepath, 'utf8')
@@ -13,11 +14,14 @@ export function capitalize(str: string): string {
 }
 
 export const replaceTemplateContent = async (rootDir: string, projectName: string) => {
+  const className = transformNameToClassName(projectName)
+
   await Promise.all([
-    replaceContent(path.resolve(rootDir, 'package.json'), content => content.replace('@services/template', projectName)),
-    replaceContent(path.resolve(rootDir, '@types/index.ts'), content => content.replaceAll('Template', capitalize(projectName))),
-    replaceContent(path.resolve(rootDir, 'src/index.ts'), content => content.replace('class TemplateService', `class ${capitalize(projectName)}Service`)),
-    replaceContent(path.resolve(rootDir, 'wrangler.toml'), content => content.replace('template-service', `${projectName}-service`)),
+    replaceContent(path.resolve(rootDir, 'package.json'), content => content.replace('template', projectName)),
+    replaceContent(path.resolve(rootDir, '@types/index.ts'), content => content.replaceAll('TemplateService', className).replace('TemplateWorkerRPC', `${className}WorkerRPC`).replace('@services/template', `${projectName}`)),
+    replaceContent(path.resolve(rootDir, 'src/index.ts'), content => content.replace('class TemplateService', `class ${className}`)),
+    replaceContent(path.resolve(rootDir, 'wrangler.toml'), content => content.replace('template', `${projectName}`)),
+    replaceContent(path.resolve(rootDir, 'worker-configuration.d.ts'), content => content.replace('TemplateEnv', `${className}Env`))
   ])
 }
 
