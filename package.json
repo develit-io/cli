@@ -6,12 +6,15 @@
   "license": "ISC",
   "type": "module",
   "bin": {
-    "develit": "./dist/cli.js"
+    "develit": "./bin/develit.mjs"
   },
   "exports": {
-    ".": "./dist/cli.mjs",
-    "./package.json": "./package.json"
+    ".":  "./dist/cli.mjs"
   },
+  "files": [
+    "bin",
+    "dist"
+  ],
   "scripts": {
     "start": "node dist/cli.js",
     "build": "unbuild",
