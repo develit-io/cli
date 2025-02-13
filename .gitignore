@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.dll
+
+# WebStorm
+.idea
+
+# Environment
+.env
+
+# NPM
+node_modules
+
+# Wrangler
+.wrangler
+
