@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.2.4
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.2.3...v1.2.4)
+
+### 💅 Refactors
+
+- **build:** Rewrite exports ([c4e6080](https://github.com/develit-io/cli/commit/c4e6080))
+
+### ❤️ Contributors
+
+- Klein Petr ([@kleinpetr](http://github.com/kleinpetr))
+
 ## v1.2.3
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.2.2...v1.2.3)
