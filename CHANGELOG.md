@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.2.5
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.2.4...v1.2.5)
+
+### 🩹 Fixes
+
+- **cli:** Project name vs class name ([416c228](https://github.com/develit-io/cli/commit/416c228))
+
+### ❤️ Contributors
+
+- Daniel Klein <daniel@develit.io>
+
 ## v1.2.4
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.2.3...v1.2.4)
