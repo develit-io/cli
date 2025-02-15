@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.3.0
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.2.5...v1.3.0)
+
+### 🚀 Enhancements
+
+- **override:** Path ([31b493a](https://github.com/develit-io/cli/commit/31b493a))
+
+### 💅 Refactors
+
+- **template:** ReplaceContent keys ([e97ce06](https://github.com/develit-io/cli/commit/e97ce06))
+
+### ❤️ Contributors
+
+- Daniel Klein <daniel@develit.io>
+
 ## v1.2.5
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.2.4...v1.2.5)
