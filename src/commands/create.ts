@@ -3,6 +3,7 @@ import { resolve } from 'pathe'
 import { downloadTemplate } from 'giget'
 import { defineCommand } from 'citty'
 import { capitalize, replaceTemplateContent, execAsync } from '../utils'
+import {checkTargetDirectory} from "../utils/overrideDirectory";
 
 const DEFAULT_REGISTRY = 'github:develit-io/starter'
 
@@ -52,11 +53,17 @@ export const createCommand = defineCommand({
 
     const __targetDir = resolve(process.cwd(), projectName)
 
+    const override = await checkTargetDirectory(__targetDir)
+
+    if(!override)
+      process.exit(1)
+
     const copyTemplateSpinner = p.spinner()
 
     try {
       copyTemplateSpinner.start('Creating new Service Worker...')
       await downloadTemplate(`${DEFAULT_REGISTRY}#${template}`, {
+        force: true,
         dir: __targetDir
       })
 
