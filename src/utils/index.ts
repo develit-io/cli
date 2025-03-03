@@ -19,7 +19,7 @@ export const replaceTemplateContent = async (rootDir: string, projectName: strin
   await Promise.all([
     replaceContent(path.resolve(rootDir, 'package.json'), content => content.replace('template', projectName).replace('TemplateEnv',`${className}Env`)),
     replaceContent(path.resolve(rootDir, '@types/index.ts'), content => content.replaceAll('Template', className)),
-    replaceContent(path.resolve(rootDir, 'src/index.ts'), content => content.replace('class Template', `class ${className}`)),
+    replaceContent(path.resolve(rootDir, 'src/index.ts'), content => content.replace('class Template', `class ${className}`).replace('TemplateEnv', `${className}Env`)),
     replaceContent(path.resolve(rootDir, 'wrangler.toml'), content => content.replace('template', `${projectName}`)),
     replaceContent(path.resolve(rootDir, 'worker-configuration.d.ts'), content => content.replace('TemplateEnv', `${className}Env`))
   ])
