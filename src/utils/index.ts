@@ -9,11 +9,9 @@ async function replaceContent(filepath: string, replacer: (content: string) => s
   await fs.writeFile(filepath, replacer(content))
 }
 
-export function capitalize(str: string): string {
-  return str.charAt(0).toUpperCase() + str.slice(1)
-}
+export const execAsync = promisify(exec)
 
-export const replaceTemplateContent = async (rootDir: string, projectName: string, className:string) => {
+export const replaceWorkerTemplateContent = async (rootDir: string, projectName: string, className:string) => {
   const projectNameUpper = transformNameToClassName(projectName)
 
   await Promise.all([
@@ -25,4 +23,10 @@ export const replaceTemplateContent = async (rootDir: string, projectName: strin
   ])
 }
 
-export const execAsync = promisify(exec)
+export const replaceNitroTemplateContent = async (rootDir: string, projectName: string)=> {
+  await Promise.all([
+      replaceContent(path.resolve(rootDir, 'wrangler.toml'), content => content.replace('template', projectName)),
+      replaceContent(path.resolve(rootDir, 'package.json'), content => content.replace('template', projectName)),
+  ])
+}
+

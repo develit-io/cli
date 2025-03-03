@@ -2,10 +2,28 @@ import * as p from '@clack/prompts'
 import { resolve } from 'pathe'
 import { downloadTemplate } from 'giget'
 import { defineCommand } from 'citty'
-import { capitalize, replaceTemplateContent, execAsync } from '../utils'
-import {checkTargetDirectory} from "../utils/overrideDirectory";
+import {replaceWorkerTemplateContent, execAsync, replaceNitroTemplateContent} from '../utils'
+import { checkTargetDirectory } from "../utils/overrideDirectory";
 
 const DEFAULT_REGISTRY = 'github:develit-io/starter'
+
+
+// String values are branch names inside develit-starter
+enum Template {
+  WORKER = 'worker-entrypoint',
+  NITRO = 'nitro-orchestrator'
+}
+
+const TEMPLATE_OPTIONS = [
+  {
+    label: 'Worker Entrypoint',
+    value: Template.WORKER
+  },
+  {
+    label: 'Nitro Orchestrator',
+    value: Template.NITRO,
+  }
+]
 
 export const createCommand = defineCommand({
   meta: {
@@ -42,20 +60,18 @@ export const createCommand = defineCommand({
     if(!ctx.args.template) {
       template = (await p.select({
         message: 'Select template',
-        options: [
-          {
-            label: 'Worker Entrypoint',
-            value: 'worker-entrypoint'
-          }
-        ]
+        options: TEMPLATE_OPTIONS,
       })).toString()
     }
 
-    const className = (await p.text({
-      message: 'Enter class name',
-      placeholder: projectName,
-      defaultValue: projectName,
-    })).toString()
+    let className: string
+    if(template === Template.WORKER) {
+      className = (await p.text({
+        message: 'Enter class name',
+        placeholder: projectName,
+        defaultValue: projectName,
+      })).toString()
+    }
 
     const __targetDir = resolve(process.cwd(), projectName)
 
@@ -73,7 +89,11 @@ export const createCommand = defineCommand({
         dir: __targetDir
       })
 
-      await replaceTemplateContent(__targetDir, projectName,className)
+      if(template === Template.WORKER)
+        await replaceWorkerTemplateContent(__targetDir, projectName, className!)
+
+      if(template === Template.NITRO)
+        await replaceNitroTemplateContent(__targetDir,projectName)
 
       copyTemplateSpinner.stop(`${projectName} Project created successfully!`)
 

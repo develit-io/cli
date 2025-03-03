@@ -20,6 +20,7 @@
     "start": "node dist/cli.js",
     "build": "unbuild",
     "prepack": "unbuild",
+    "typecheck": "tsc --noEmit",
     "changelogen": "npx changelogen@latest --bump",
     "release": "pnpm build && npx changelogen@latest --release --push && npm publish --access public"
   },
