@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.4.0
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.3.2...v1.4.0)
+
+### 🚀 Enhancements
+
+- **create:** Class name prompt ([a15585a](https://github.com/develit-io/cli/commit/a15585a))
+
+### ❤️ Contributors
+
+- Daniel Klein <daniel@develit.io>
+
 ## v1.3.2
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.3.1...v1.3.2)
