@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v1.3.1
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.3.0...v1.3.1)
+
+### 🩹 Fixes
+
+- **template:** Change env in package on create ([1efff27](https://github.com/develit-io/cli/commit/1efff27))
+
+### 🏡 Chore
+
+- Add LICENSE ([627b8b8](https://github.com/develit-io/cli/commit/627b8b8))
+
+### ❤️ Contributors
+
+- Klein Petr ([@kleinpetr](https://github.com/kleinpetr))
+- Daniel Klein <daniel@develit.io>
+
 ## v1.3.0
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.2.5...v1.3.0)
