@@ -51,6 +51,12 @@ export const createCommand = defineCommand({
       })).toString()
     }
 
+    const className = (await p.text({
+      message: 'Enter class name',
+      placeholder: projectName,
+      defaultValue: projectName,
+    })).toString()
+
     const __targetDir = resolve(process.cwd(), projectName)
 
     const override = await checkTargetDirectory(__targetDir)
@@ -67,7 +73,7 @@ export const createCommand = defineCommand({
         dir: __targetDir
       })
 
-      await replaceTemplateContent(__targetDir, projectName)
+      await replaceTemplateContent(__targetDir, projectName,className)
 
       copyTemplateSpinner.stop(`${projectName} Project created successfully!`)
 
