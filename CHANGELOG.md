@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.3.2
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.3.1...v1.3.2)
+
+### 🩹 Fixes
+
+- **template:** Starter overrides ([0fdc4c0](https://github.com/develit-io/cli/commit/0fdc4c0))
+
+### ❤️ Contributors
+
+- Daniel Klein <daniel@develit.io>
+
 ## v1.3.1
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.3.0...v1.3.1)
