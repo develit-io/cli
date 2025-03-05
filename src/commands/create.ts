@@ -2,16 +2,19 @@ import * as p from '@clack/prompts'
 import { resolve } from 'pathe'
 import { downloadTemplate } from 'giget'
 import { defineCommand } from 'citty'
-import {replaceWorkerTemplateContent, execAsync, replaceNitroTemplateContent} from '../utils'
+import {
+  replaceTemplateContent,
+  execAsync,
+} from '../utils'
 import { checkTargetDirectory } from "../utils/overrideDirectory";
 
 const DEFAULT_REGISTRY = 'github:develit-io/starter'
 
-
 // String values are branch names inside develit-starter
-enum Template {
+export enum Template {
   WORKER = 'worker-entrypoint',
-  NITRO = 'nitro-orchestrator'
+  NITRO = 'nitro-orchestrator',
+  MONO = 'monorepository'
 }
 
 const TEMPLATE_OPTIONS = [
@@ -22,6 +25,10 @@ const TEMPLATE_OPTIONS = [
   {
     label: 'Nitro Orchestrator',
     value: Template.NITRO,
+  },
+  {
+    label: 'Monorepository',
+    value: Template.MONO,
   }
 ]
 
@@ -64,7 +71,7 @@ export const createCommand = defineCommand({
       })).toString()
     }
 
-    let className: string
+    let className = ''
     if(template === Template.WORKER) {
       className = (await p.text({
         message: 'Enter class name',
@@ -89,11 +96,7 @@ export const createCommand = defineCommand({
         dir: __targetDir
       })
 
-      if(template === Template.WORKER)
-        await replaceWorkerTemplateContent(__targetDir, projectName, className!)
-
-      if(template === Template.NITRO)
-        await replaceNitroTemplateContent(__targetDir,projectName)
+      await replaceTemplateContent(__targetDir, projectName, className)
 
       copyTemplateSpinner.stop(`${projectName} Project created successfully!`)
 

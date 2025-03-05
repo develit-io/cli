@@ -3,6 +3,7 @@ import * as path from 'path'
 import { exec } from 'child_process'
 import { promisify } from 'util'
 import { transformNameToClassName} from "./name"
+import {Template} from "../commands";
 
 async function replaceContent(filepath: string, replacer: (content: string) => string) {
   const content = await fs.readFile(filepath, 'utf8')
@@ -11,7 +12,20 @@ async function replaceContent(filepath: string, replacer: (content: string) => s
 
 export const execAsync = promisify(exec)
 
-export const replaceWorkerTemplateContent = async (rootDir: string, projectName: string, className:string) => {
+export const replaceTemplateContent = async (template: Template, rootDir: string, projectName: string, className?: string)=> {
+  switch(template) {
+    case Template.WORKER:
+      await replaceWorkerTemplateContent(rootDir,projectName,className!)
+    break
+    case Template.NITRO:
+      await replaceNitroTemplateContent(rootDir, projectName)
+    break
+    case Template.MONO:
+      await replaceMonoTemplateContent(rootDir,projectName)
+  }
+}
+
+const replaceWorkerTemplateContent = async (rootDir: string, projectName: string, className:string) => {
   const projectNameUpper = transformNameToClassName(projectName)
 
   await Promise.all([
@@ -23,10 +37,16 @@ export const replaceWorkerTemplateContent = async (rootDir: string, projectName:
   ])
 }
 
-export const replaceNitroTemplateContent = async (rootDir: string, projectName: string)=> {
+const replaceNitroTemplateContent = async (rootDir: string, projectName: string)=> {
   await Promise.all([
       replaceContent(path.resolve(rootDir, 'wrangler.toml'), content => content.replace('template', projectName)),
       replaceContent(path.resolve(rootDir, 'package.json'), content => content.replace('template', projectName)),
+  ])
+}
+
+const replaceMonoTemplateContent = async (rootDir: string, projectName: string)=> {
+  await Promise.all([
+      replaceContent(path.resolve(rootDir, 'package.json'), content => content.replace('monorepository', projectName)),
   ])
 }
 
