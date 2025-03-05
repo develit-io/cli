@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v1.5.0
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.4.0...v1.5.0)
+
+### 🚀 Enhancements
+
+- **nitro:** Nitro template ([daabf40](https://github.com/develit-io/cli/commit/daabf40))
+- **create:** Add monorepo option ([cced8be](https://github.com/develit-io/cli/commit/cced8be))
+
+### 🏡 Chore
+
+- Update LICENSE ([24789f7](https://github.com/develit-io/cli/commit/24789f7))
+
+### ❤️ Contributors
+
+- Daniel Klein <daniel@develit.io>
+- Klein Petr ([@kleinpetr](https://github.com/kleinpetr))
+
 ## v1.4.0
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.3.2...v1.4.0)
