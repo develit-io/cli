@@ -25,11 +25,15 @@ export const generateWranglerCommand = defineCommand({
       const wranglerTsPath = resolve(process.cwd(), './wrangler.ts')
       const wranglerPath = resolve(process.cwd(), './wrangler.jsonc')
 
+      // Execute the wrangler.ts file using tsx and capture the output
+      const { stdout } = await execAsync(`bunx tsx ${wranglerTsPath}`, { cwd: process.cwd() })
+      const wranglerConfig = JSON.parse(stdout)
+
       const header = `// ⚠️ AUTO-GENERATED FILE. DO NOT EDIT.
       // To make changes, update wrangler.ts and re-run the generation script.
       \n`
-      const wrnaglerTsContent = await import(wranglerTsPath)
-      const body = JSON.stringify(wrnaglerTsContent, null, 2)
+
+      const body = JSON.stringify(wranglerConfig, null, 2)
 
       await fs.writeFile(wranglerPath, header + body)
       console.log(`✅ Generated wrangler.jsonc at ${wranglerPath}`)
