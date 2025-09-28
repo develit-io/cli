@@ -1,12 +1,12 @@
 import * as p from '@clack/prompts'
-import { resolve } from 'pathe'
-import { downloadTemplate } from 'giget'
 import { defineCommand } from 'citty'
+import { downloadTemplate } from 'giget'
+import { resolve } from 'pathe'
 import {
-  replaceTemplateContent,
-  execAsync,
+    execAsync,
+    replaceTemplateContent,
 } from '../utils'
-import { checkTargetDirectory } from "../utils/overrideDirectory";
+import { checkTargetDirectory } from "../utils/overrideDirectory"
 
 const DEFAULT_REGISTRY = 'github:develit-io/starter'
 

@@ -1,5 +1,5 @@
-import { defineCommand, runMain as _runMain } from 'citty'
-import { createCommand } from './commands'
+import { runMain as _runMain, defineCommand } from 'citty'
+import { createCommand, generateWranglerCommand } from './commands'
 
 export const main = defineCommand({
   meta: {
@@ -8,6 +8,7 @@ export const main = defineCommand({
   },
   subCommands: {
     'create': createCommand,
+    'wrangler:generate': generateWranglerCommand,
   },
 })
 
