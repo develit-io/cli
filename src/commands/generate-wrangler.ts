@@ -1,8 +1,10 @@
 import * as p from '@clack/prompts'
 import { defineCommand } from 'citty'
+import { build } from 'esbuild'
 import * as fs from 'node:fs/promises'
 import { resolve } from 'pathe'
 
+import { pathToFileURL } from 'node:url'
 import {
     execAsync
 } from '../utils'
@@ -23,11 +25,22 @@ export const generateWranglerCommand = defineCommand({
 
 
       const wranglerTsPath = resolve(process.cwd(), './wrangler.ts')
+      const wranglerJsPath = resolve(process.cwd(), './.wrangler.tmp.mjs')
       const wranglerPath = resolve(process.cwd(), './wrangler.jsonc')
 
-      // Execute the wrangler.ts file using tsx and capture the output
-      const { stdout } = await execAsync(`bunx tsx ${wranglerTsPath}`, { cwd: process.cwd() })
-      const wranglerConfig = JSON.parse(stdout)
+      // Bundling wrangler.ts do čistého ESM
+      await build({
+        entryPoints: [wranglerTsPath],
+        outfile: wranglerJsPath,
+        bundle: true,
+        platform: 'node',
+        format: 'esm',
+        target: 'esnext',
+      })
+
+      // Import bundlu
+      const wranglerModule = await import(pathToFileURL(wranglerJsPath).href)
+      const wranglerConfig = wranglerModule.default
 
       const header = `// ⚠️ AUTO-GENERATED FILE. DO NOT EDIT.
       // To make changes, update wrangler.ts and re-run the generation script.

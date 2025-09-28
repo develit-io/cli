@@ -27,6 +27,7 @@
   "dependencies": {
     "@clack/prompts": "^0.10.0",
     "@types/node": "20.8.3",
+    "esbuild": "^0.25.10",
     "giget": "^2.0.0",
     "pathe": "^2.0.3"
   },
