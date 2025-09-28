@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v1.6.0
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.5.0...v1.6.0)
+
+### 🚀 Enhancements
+
+- Add wrangler:generate command ([e6af9f9](https://github.com/develit-io/cli/commit/e6af9f9))
+
+### 🏡 Chore
+
+- Update readme ([9b7124d](https://github.com/develit-io/cli/commit/9b7124d))
+- Add README ([b735092](https://github.com/develit-io/cli/commit/b735092))
+
+### ❤️ Contributors
+
+- Klein Petr ([@kleinpetr](https://github.com/kleinpetr))
+
 ## v1.5.0
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.4.0...v1.5.0)
