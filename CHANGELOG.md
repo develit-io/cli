@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.6.1
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.6.0...v1.6.1)
+
+### 🩹 Fixes
+
+- Loading wrangler.ts content ([6259347](https://github.com/develit-io/cli/commit/6259347))
+
+### ❤️ Contributors
+
+- Klein Petr ([@kleinpetr](https://github.com/kleinpetr))
+
 ## v1.6.0
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.5.0...v1.6.0)
