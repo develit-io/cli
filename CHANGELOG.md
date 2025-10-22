@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.6.4
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.6.3...v1.6.4)
+
+### 🩹 Fixes
+
+- Cli not ran in bun context ([1a81c62](https://github.com/develit-io/cli/commit/1a81c62))
+
+### ❤️ Contributors
+
+- Kotkoroid <git@kotkoroid.com>
+
 ## v1.6.3
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.6.2...v1.6.3)
