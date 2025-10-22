@@ -37,10 +37,15 @@ export const generateWranglerCommand = defineCommand({
       })
 
       if (!buildResult.success) {
-        throw new Error('Failed to bundle wrangler.ts')
+        const errors = buildResult.logs.filter(log => log.level === 'error')
+        throw new Error(`Failed to bundle wrangler.ts: ${errors.map(e => e.message).join(', ')}`)
       }
 
-      const wranglerJsPath = resolve(tempDir, 'wrangler.js')
+      // Get the actual output file path from build result
+      const wranglerJsPath = buildResult.outputs[0]?.path
+      if (!wranglerJsPath) {
+        throw new Error('Build succeeded but no output file was created')
+      }
 
       const header = `// ⚠️ AUTO-GENERATED FILE. DO NOT EDIT.
       // To make changes, update wrangler.ts and re-run the generation script.
