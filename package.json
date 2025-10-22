@@ -6,7 +6,7 @@
   "license": "ISC",
   "type": "module",
   "bin": {
-    "develit": "./bin/develit.mjs"
+    "develit": "bin/develit.mjs"
   },
   "exports": {
     ".": "./dist/index.mjs",
