@@ -9,9 +9,8 @@ dist
 # Environment
 .env
 
-# NPM
+# Bun
 node_modules
 
 # Wrangler
 .wrangler
-

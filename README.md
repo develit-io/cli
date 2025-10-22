@@ -8,16 +8,16 @@ You can use `develit` CLI to clone latest template to an empty directory:
 
 
 ```sh-session
-$ npx develit create [<dir>] [-t,--template=<template>] 
+$ bunx develit create [<dir>] [-t,--template=<template>]
 ```
 
 **Example:** Clone `worker-entrypoint` to `my-app` directory:
 
 ```sh-session
-$ npx develit create my-app -t worker-entrypoint
+$ bunx develit create my-app -t worker-entrypoint
 ```
 
-> You can use any template from our [Starter Repository](https://github.com/develit-io/starter)  
+> You can use any template from our [Starter Repository](https://github.com/develit-io/starter)
 
 ## License
 

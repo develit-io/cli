@@ -108,10 +108,10 @@ export const createCommand = defineCommand({
         try {
           await p.tasks([
             {
-              title: 'Installing dependencies via pnpm...',
+              title: 'Installing dependencies via Bun...',
               task: async (_) => {
-                await execAsync('pnpm install', { cwd: __targetDir })
-                return 'Installed dependencies via pnpm'
+                await execAsync('bun install', { cwd: __targetDir })
+                return 'Installed dependencies via Bun.'
               },
             },
           ])

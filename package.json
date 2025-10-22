@@ -21,8 +21,8 @@
     "build": "unbuild",
     "prepack": "unbuild",
     "typecheck": "tsc --noEmit",
-    "changelogen": "npx changelogen@latest --bump",
-    "release": "pnpm build && npx changelogen@latest --release --push && npm publish --access public"
+    "changelogen": "bunx changelogen@latest --bump",
+    "release": "bun run build && bunx changelogen@latest --release --push && npm publish --access public"
   },
   "dependencies": {
     "@clack/prompts": "^0.10.0",
