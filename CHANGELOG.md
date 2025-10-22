@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.6.3
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.6.2...v1.6.3)
+
+### 💅 Refactors
+
+- Replace esbuild with bun ([c278491](https://github.com/develit-io/cli/commit/c278491))
+- Replace pnpm with Bun ([a52177c](https://github.com/develit-io/cli/commit/a52177c))
+
+### ❤️ Contributors
+
+- Kotkoroid <git@kotkoroid.com>
+
 ## v1.6.2
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.6.1...v1.6.2)
