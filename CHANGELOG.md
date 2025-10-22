@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.6.5
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.6.4...v1.6.5)
+
+### 🩹 Fixes
+
+- Temp file not deleted after build ([4cbf338](https://github.com/develit-io/cli/commit/4cbf338))
+
+### ❤️ Contributors
+
+- Kotkoroid <git@kotkoroid.com>
+
 ## v1.6.4
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.6.3...v1.6.4)
