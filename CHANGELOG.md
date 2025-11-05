@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.7.5
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.7.4...v1.7.5)
+
+### 🩹 Fixes
+
+- Types flag still invoking prompt ([832eae8](https://github.com/develit-io/cli/commit/832eae8))
+
+### ❤️ Contributors
+
+- Kotkoroid <git@kotkoroid.com>
+
 ## v1.7.4
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.7.3...v1.7.4)
