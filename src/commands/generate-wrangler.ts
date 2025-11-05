@@ -13,9 +13,9 @@ export const generateWranglerCommand = defineCommand({
     description: `Generate 'wrangler.jsonc' from 'wrangler.ts' file.`,
   },
   args: {
-    'no-interactive': {
+    types: {
       type: 'boolean',
-      description: 'Skip interactive prompts and always run cf:typegen',
+      description: 'Generate Cloudflare types after creating wrangler.jsonc',
       default: false,
     },
   },
@@ -71,12 +71,8 @@ export const generateWranglerCommand = defineCommand({
 
       copyTemplateSpinner.stop(`The file 'wrangler.jsonc' created successfully!`)
 
-      console.log('DEBUG: args =', args)
-      console.log('DEBUG: args["no-interactive"] =', args['no-interactive'])
-      console.log('DEBUG: typeof args["no-interactive"] =', typeof args['no-interactive'])
-
       let cfTypegen: boolean | symbol = false
-      if (args['no-interactive'] === true) {
+      if (args.types === true) {
         cfTypegen = true
       } else {
         cfTypegen = await p.confirm({
