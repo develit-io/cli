@@ -12,7 +12,14 @@ export const generateWranglerCommand = defineCommand({
     name: 'generate-wrangler',
     description: `Generate 'wrangler.jsonc' from 'wrangler.ts' file.`,
   },
-  async run() {
+  args: {
+    'no-interactive': {
+      type: 'boolean',
+      description: 'Skip interactive prompts and always run cf:typegen',
+      default: false,
+    },
+  },
+  async run({ args }) {
     p.intro('🚀 Develit CLI')
 
     const __workingDir = resolve(process.cwd())
@@ -64,7 +71,7 @@ export const generateWranglerCommand = defineCommand({
 
       copyTemplateSpinner.stop(`The file 'wrangler.jsonc' created successfully!`)
 
-      const cfTypegen = await p.confirm({
+      const cfTypegen = args['no-interactive'] || await p.confirm({
         message: 'bun cf:typegen? ',
       })
 
