@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.7.1
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.7.0...v1.7.1)
+
+### 🩹 Fixes
+
+- No interactive flag not working ([fae323c](https://github.com/develit-io/cli/commit/fae323c))
+
+### ❤️ Contributors
+
+- Kotkoroid <git@kotkoroid.com>
+
 ## v1.7.0
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.6.5...v1.7.0)
