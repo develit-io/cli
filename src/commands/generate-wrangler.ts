@@ -87,28 +87,6 @@ export const generateWranglerCommand = defineCommand({
           p.log.error(`${error}`)
           p.outro('Operation failed.')
         }
-      } else {
-        const cfTypegen = await p.confirm({
-          message: 'bun cf:typegen? ',
-        })
-
-        if (cfTypegen === true) {
-          try {
-            await p.tasks([
-              {
-                title: 'Generating Cloudflare types...',
-                task: async (_) => {
-                  await execAsync('bun cf:typegen', { cwd: __workingDir })
-                  return 'Done! Cloudflare types generated successfully.'
-                },
-              },
-            ])
-          }
-          catch (error) {
-            p.log.error(`${error}`)
-            p.outro('Operation failed.')
-          }
-        }
       }
 
       p.outro(`Everything is ready to go! 🚀`)
