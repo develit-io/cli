@@ -71,6 +71,10 @@ export const generateWranglerCommand = defineCommand({
 
       copyTemplateSpinner.stop(`The file 'wrangler.jsonc' created successfully!`)
 
+      console.log('DEBUG: args =', args)
+      console.log('DEBUG: args["no-interactive"] =', args['no-interactive'])
+      console.log('DEBUG: typeof args["no-interactive"] =', typeof args['no-interactive'])
+
       let cfTypegen: boolean | symbol = false
       if (args['no-interactive'] === true) {
         cfTypegen = true
