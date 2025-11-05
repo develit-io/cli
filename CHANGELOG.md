@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.7.3
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.7.2...v1.7.3)
+
+### 💅 Refactors
+
+- Generate types only with types flag ([568d2a7](https://github.com/develit-io/cli/commit/568d2a7))
+
+### ❤️ Contributors
+
+- Kotkoroid <git@kotkoroid.com>
+
 ## v1.7.2
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.7.1...v1.7.2)
