@@ -71,11 +71,16 @@ export const generateWranglerCommand = defineCommand({
 
       copyTemplateSpinner.stop(`The file 'wrangler.jsonc' created successfully!`)
 
-      const cfTypegen = args['no-interactive'] || await p.confirm({
-        message: 'bun cf:typegen? ',
-      })
+      let cfTypegen: boolean | symbol = false
+      if (args['no-interactive'] === true) {
+        cfTypegen = true
+      } else {
+        cfTypegen = await p.confirm({
+          message: 'bun cf:typegen? ',
+        })
+      }
 
-      if (cfTypegen) {
+      if (cfTypegen === true) {
         try {
           await p.tasks([
             {
