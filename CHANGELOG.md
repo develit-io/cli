@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.7.0
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.6.5...v1.7.0)
+
+### 🚀 Enhancements
+
+- Add no interactive flag ([537eabc](https://github.com/develit-io/cli/commit/537eabc))
+
+### ❤️ Contributors
+
+- Kotkoroid <git@kotkoroid.com>
+
 ## v1.6.5
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.6.4...v1.6.5)
