@@ -95,6 +95,13 @@ export const generateWranglerCommand = defineCommand({
 		} catch (error) {
 			copyTemplateSpinner.stop(`Failed to generate 'wrangler.jsonc' file.`);
 			p.log.error(`${error}`);
+
+			if (error instanceof AggregateError) {
+				console.error("AGGREGATE ERROR DETAILS:");
+				for (const err of error.errors) {
+					p.log.error(`- ${err}`);
+				}
+			}
 		}
 	},
 });
