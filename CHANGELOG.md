@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.9.0
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.8.0...v1.9.0)
+
+### 🚀 Enhancements
+
+- Add aggregate error info ([5ad4297](https://github.com/develit-io/cli/commit/5ad4297))
+
+### ❤️ Contributors
+
+- Klein Petr ([@kleinpetr](https://github.com/kleinpetr))
+
 ## v1.8.0
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.6.2...v1.8.0)
