@@ -1,6 +1,49 @@
 # Changelog
 
 
+## v1.8.0
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.6.2...v1.8.0)
+
+### 🚀 Enhancements
+
+- Add no interactive flag ([537eabc](https://github.com/develit-io/cli/commit/537eabc))
+- Add build logs ([4d4dbc3](https://github.com/develit-io/cli/commit/4d4dbc3))
+
+### 🩹 Fixes
+
+- Cli not ran in bun context ([1a81c62](https://github.com/develit-io/cli/commit/1a81c62))
+- Temp file not deleted after build ([4cbf338](https://github.com/develit-io/cli/commit/4cbf338))
+- No interactive flag not working ([fae323c](https://github.com/develit-io/cli/commit/fae323c))
+- Types flag still invoking prompt ([80a93a2](https://github.com/develit-io/cli/commit/80a93a2))
+- Types flag still invoking prompt ([832eae8](https://github.com/develit-io/cli/commit/832eae8))
+
+### 💅 Refactors
+
+- Replace esbuild with bun ([c278491](https://github.com/develit-io/cli/commit/c278491))
+- Replace pnpm with Bun ([a52177c](https://github.com/develit-io/cli/commit/a52177c))
+- Generate types only with types flag ([568d2a7](https://github.com/develit-io/cli/commit/568d2a7))
+
+### 🏡 Chore
+
+- **release:** V1.6.3 ([78df3b5](https://github.com/develit-io/cli/commit/78df3b5))
+- **release:** V1.6.4 ([0e32588](https://github.com/develit-io/cli/commit/0e32588))
+- **release:** V1.6.5 ([69f67bf](https://github.com/develit-io/cli/commit/69f67bf))
+- **release:** V1.7.0 ([2cdec06](https://github.com/develit-io/cli/commit/2cdec06))
+- **release:** V1.7.1 ([d352b1f](https://github.com/develit-io/cli/commit/d352b1f))
+- Add debug logs ([1365a38](https://github.com/develit-io/cli/commit/1365a38))
+- **release:** V1.7.2 ([ad266a7](https://github.com/develit-io/cli/commit/ad266a7))
+- **release:** V1.7.3 ([f807aa4](https://github.com/develit-io/cli/commit/f807aa4))
+- **release:** V1.7.4 ([374d2b8](https://github.com/develit-io/cli/commit/374d2b8))
+- **release:** V1.7.5 ([802e12a](https://github.com/develit-io/cli/commit/802e12a))
+- Update deps ([81cbe6b](https://github.com/develit-io/cli/commit/81cbe6b))
+
+### ❤️ Contributors
+
+- Klein Petr ([@kleinpetr](https://github.com/kleinpetr))
+- Co Chces <cochces@Cos-MacBook-Pro.local>
+- Kotkoroid <git@kotkoroid.com>
+
 ## v1.7.5
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.7.4...v1.7.5)
