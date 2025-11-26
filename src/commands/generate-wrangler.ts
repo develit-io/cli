@@ -34,12 +34,23 @@ export const generateWranglerCommand = defineCommand({
 			await fs.mkdir(tempDir, { recursive: true });
 
 			// Bundling wrangler.ts to clean ESM
-			const buildResult = await Bun.build({
-				entrypoints: [wranglerTsPath],
-				outdir: tempDir,
-				target: "node",
-				format: "esm",
-			});
+			let buildResult: Bun.BuildOutput | undefined
+      try {
+        buildResult = await Bun.build({
+          entrypoints: [wranglerTsPath],
+          outdir: tempDir,
+          target: "node",
+          format: "esm",
+        });
+      } catch (error) {
+        console.error(error);
+      }
+
+      if (!buildResult) {
+        throw new Error(
+					`Failed to bundle wrangler.ts. Unknown error.`,
+				);
+      }
 
 			if (!buildResult.success) {
 				console.log(buildResult.logs);
