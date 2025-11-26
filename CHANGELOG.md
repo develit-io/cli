@@ -1,6 +1,30 @@
 # Changelog
 
 
+## v1.10.0
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.9.0...v1.10.0)
+
+### 🚀 Enhancements
+
+- Show error if bundle fails ([5d00796](https://github.com/develit-io/cli/commit/5d00796))
+
+### 🏡 Chore
+
+- Update deps ([c310476](https://github.com/develit-io/cli/commit/c310476))
+- Add dependabot ([2e4a89d](https://github.com/develit-io/cli/commit/2e4a89d))
+- Update deps ([75b5460](https://github.com/develit-io/cli/commit/75b5460))
+
+### 🤖 CI
+
+- Add ci script ([a4f6ccc](https://github.com/develit-io/cli/commit/a4f6ccc))
+
+### ❤️ Contributors
+
+- Kotkoroid <git@kotkoroid.com>
+- Co Chces <cochces@Cos-MacBook-Pro.local>
+- Gosha <gosha@Gosha-MacBook-Pro.local>
+
 ## v1.9.0
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.8.0...v1.9.0)
