@@ -1,6 +1,29 @@
 # Changelog
 
 
+## v2.0.0
+
+[compare changes](https://github.com/develit-io/cli/compare/v1.10.0...v2.0.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Switch to new types generation command ([e8bddcf](https://github.com/develit-io/cli/commit/e8bddcf))
+
+### 🏡 Chore
+
+- Update deps ([608f5a9](https://github.com/develit-io/cli/commit/608f5a9))
+- Update deps ([90444be](https://github.com/develit-io/cli/commit/90444be))
+- Update deps ([1789564](https://github.com/develit-io/cli/commit/1789564))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Switch to new types generation command ([e8bddcf](https://github.com/develit-io/cli/commit/e8bddcf))
+
+### ❤️ Contributors
+
+- Kotkoroid <git@kotkoroid.com>
+- Co Chces <cochces@Cos-MacBook-Pro.local>
+
 ## v1.10.0
 
 [compare changes](https://github.com/develit-io/cli/compare/v1.9.0...v1.10.0)
