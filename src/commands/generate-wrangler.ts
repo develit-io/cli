@@ -91,7 +91,7 @@ export const generateWranglerCommand = defineCommand({
 						{
 							title: "Generating Cloudflare types...",
 							task: async (_) => {
-								await execAsync("bun cf:typegen", { cwd: __workingDir });
+								await execAsync("bun types", { cwd: __workingDir });
 								return "Done! Cloudflare types generated successfully.";
 							},
 						},
