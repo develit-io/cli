@@ -25,8 +25,8 @@
     "release": "bun run build && bunx changelogen@latest --release --push && npm publish --access public"
   },
   "dependencies": {
-    "@clack/prompts": "^0.11.0",
-    "@types/node": "25.0.10",
+    "@clack/prompts": "^1.0.1",
+    "@types/node": "25.3.0",
     "giget": "^3.1.2",
     "pathe": "^2.0.3"
   },
