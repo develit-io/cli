@@ -3,8 +3,8 @@ import { defineCommand } from 'citty'
 import { downloadTemplate } from 'giget'
 import { resolve } from 'pathe'
 import {
-    execAsync,
-    replaceTemplateContent,
+  execAsync,
+  replaceTemplateContent,
 } from '../utils'
 import { checkTargetDirectory } from "../utils/overrideDirectory"
 
@@ -54,7 +54,7 @@ export const createCommand = defineCommand({
   async run(ctx) {
     p.intro('🚀Develit CLI')
 
-    let projectName = ctx.args.name
+    let projectName = ctx.args.name || 'unknown'
     let template = ctx.args.template
 
     if(!ctx.args.name) {
